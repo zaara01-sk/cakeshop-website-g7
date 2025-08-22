@@ -68,6 +68,4 @@ A front-end-focused, interactive cake shop website with a booking system for cak
 - [Individual Contributions](documentation/individual-contributions.md)
 - [Meeting Notes](documentation/meeting-notes.md)
 
-Date: 22-August-2025
----
-**Last Updated:** [Current Date] | **Status:** In Development
+**Last Updated:** [22-AUGUST-2025] | **Status:** In Development

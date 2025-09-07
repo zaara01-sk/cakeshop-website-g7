@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fffdfd;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #d6336c;
+  padding: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(to right, #f8cdda, #f9f9f9);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero button {
+  background: #d6336c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.hero button:hover {
+  background: #a61e4d;
+}
+
+/* Flavors Section */
+#flavors {
+  padding: 40px;
+  text-align: center;
+}
+
+.flavor-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.flavor {
+  width: 250px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+.flavor img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.flavor h3 {
+  margin: 10px 0;
+  color: #d6336c;
+}

@@ -3,47 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Cake Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaI116z/b33N4V8t5Kz2zQp1FvW8a9pP4t3D5zF5zF5zF5z/8T5T5S5d5h5T5h5T5h5" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Aditya Creations - Artisan Cakes & Baking Classes</title>
+    <meta name="description" content="Aditya Creations offers artisan cakes, custom designs, and professional baking classes. Crafting sweet memories with expert techniques and premium ingredients.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Cake Shop</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/products.html">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/classes.html">Classes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/cart.html">Cart</a>
-            </li>
-          </ul>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="cake-icon">
+                <div class="cake-wrapper">
+                    <span>🎂</span>
+                </div>
+            </div>
+            <h1 class="brand-name">Aditya Creations</h1>
+            <p class="brand-tagline"> Cakes that hug the heart </p>
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" id="loadingProgress"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="progressPercent">0</span>% Complete
+                </div>
+            </div>
+            <div class="loading-text">
+                <span>Preparing your sweet experience</span>
+                <div class="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
-    
-    <h1>Welcome to the Cake Shop!</h1>
+        <div class="sparkles">
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+        </div>
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content" style="display: none;">
+        <!-- Header -->
+        <header class="navbar navbar-expand-lg fixed-top glass-nav">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <span class="brand-icon">🎂</span>
+                    <span class="brand-text">Aditya Creations</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="classes.html">Classes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="orders.html">Orders</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background"></div>
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6">
+                        <div class="hero-content">
+                            <h1 class="hero-title">
+                                Welcome to<br>
+                                <span class="gradient-text">Aditya Creations</span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                Where every cake tells a story and every bite creates a memory. 
+                                Our artisan bakers craft exquisite cakes with passion and precision.
+                            </p>
+                            <div class="hero-buttons">
+                                <a href="#services" class="btn btn-primary btn-lg me-3">Explore Our Cakes</a>
+                                <a href="classes.html" class="btn btn-outline-primary btn-lg">Join Our Classes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image">
+                            <img src="src/assets/hero-cakes.jpg" alt="Beautiful artisan cakes" class="img-fluid floating-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="section-title">About Aditya Creations</h2>
+                        <p class="section-subtitle">Crafting sweet memories since 1990s</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4">
+                        <div class="about-content">
+                            <h3 class="mb-4">Our Sweet Story</h3>
+                            <p class="mb-3">
+                                Hi there!
+                            </p>
+                            <p class="mb-3">
+                            We’re a family-run, home-based cake shop where baking is more than just a hobby — it’s our passion and way of spreading joy. Our story began back in the 1990s, when cakes weren’t as common as they are now. Back then, we struggled a lot, experimenting in our own kitchen, learning as we went, and slowly building a name for ourselves by sharing homemade cakes made with care and love.
+                            </p>
+                            <p class="mb-3">
+                            Fast forward to today, and we’re proud to say that we’ve grown into a beloved local bakery, known for our delicious cakes and friendly service. But no matter how much we’ve expanded, our core values remain the same — quality, creativity, and a personal touch in everything we do.
+                            </p>
+                            <p class="mb-3">
+                            Our mission has always been simple — to bring a variety of tasty, homemade cakes to people, and to share the joy of baking with others. That’s why, along with making cakes, we offer home-based baking tutorials. These are designed for anyone who wants to learn, whether you’re a total beginner or just looking for simple, helpful tips.
+                            </p>
+                            <p class="mb-3">
+                                Everything we do comes straight from our kitchen, with patience, care, and a desire to make baking easy, fun, and accessible for everyone. We believe that with a little love and guidance, anyone can bake happiness at home.
+                            </p>
+                            <p class="mb-4">
+                                Come, join us in this sweet adventure!
+                            </p>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <h4>500+</h4>
+                                    <p>Happy Customers</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>8+</h4>
+                                    <p>Years Experience</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h4>50+</h4>
+                                    <p>Cake Varieties</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-images">
+                            <img src="src/assets/wedding-cake.jpg" alt="Wedding cake creation" class="img-fluid rounded shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="section-title">Our Services</h2>
+                        <p class="section-subtitle">From custom cakes to baking classes</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card glass-card">
+                            <div class="service-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <h4>Custom Cakes</h4>
+                            <p>Personalized cakes for birthdays, anniversaries, and special celebrations. Each cake is uniquely designed to match your vision.</p>
+                            <a href="orders.html" class="btn btn-outline-primary">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card glass-card">
+                            <div class="service-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Wedding Cakes</h4>
+                            <p>Elegant multi-tier wedding cakes that serve as the centerpiece of your special day. Crafted with love and attention to detail.</p>
+                            <a href="orders.html" class="btn btn-outline-primary">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card glass-card">
+                            <div class="service-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Baking Classes</h4>
+                            <p>Learn the art of baking from our expert chefs. From beginner basics to advanced techniques for aspiring bakers.</p>
+                            <a href="classes.html" class="btn btn-outline-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="feedback-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="section-title">What Our Customers Say</h2>
+                        <p class="section-subtitle">Real testimonials from our happy customers</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="feedback-card glass-card text-center">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p>"Absolutely incredible! The wedding cake exceeded all our expectations. Every guest complimented the beautiful design and amazing taste."</p>
+                                        <div class="customer-info">
+                                            <h5>abc</h5>
+                                            <span>Wedding Client</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="feedback-card glass-card text-center">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p>"The baking classes are fantastic! I learned so much and now I can bake professional-quality cakes at home. Highly recommended!"</p>
+                                        <div class="customer-info">
+                                            <h5>def</h5>
+                                            <span>Baking Student</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="feedback-card glass-card text-center">
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p>"Best custom birthday cake ever! My daughter was thrilled with her unicorn cake. The attention to detail is remarkable."</p>
+                                        <div class="customer-info">
+                                            <h5>hij</h5>
+                                            <span>Birthday Party</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#feedbackCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">
+                                <span class="brand-icon">🎂</span>
+                                Aditya Creations
+                            </h5>
+                            <p>Crafting sweet memories with artisan cakes and professional baking classes since 2015.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Quick Links</h6>
+                            <ul class="footer-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="classes.html">Classes</a></li>
+                                <li><a href="orders.html">Orders</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Contact Info</h6>
+                            <ul class="contact-info">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span> # adress of shop </span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <span> 900000000000 </span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@adityacreations.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Opening Hours</h6>
+                            <ul class="opening-hours">
+                                <li>Monday - Friday: 9:00 AM - 8:00 PM</li>
+                                <li>Saturday: 9:00 AM - 9:00 PM</li>
+                                <li>Sunday: 10:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="footer-divider">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="copyright">© 2024 Aditya Creations. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/components.js"></script>
 </body>
 </html>

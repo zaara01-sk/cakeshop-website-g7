@@ -3,55 +3,279 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divine Cakes</title>
+   <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+  <title>Divine Cakes - Book Now</title>
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
+ 
 
   <!-- Header -->
-  <header>
-    <h1>🎂 Divine Cakes</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#flavors">Flavors</a>
-      <a href="#order">Order</a>
-      <a href="#tutorials">Tutorials</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="glass-nav">
+    <div class="container">
+      <div class="nav-wrapper">
+        <h1 class="navbar-brand">🎂 Divine Cakes</h1>
+        <nav class="nav-menu">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#flavors" class="nav-link">Flavors</a>
+          <a href="#order" class="nav-link">Order</a>
+          <a href="#tutorials" class="nav-link">Tutorials</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <!-- Hero / Banner -->
-  <section id="home" class="hero">
-    <h2>Freshly Baked Happiness!</h2>
-    <p>Delicious cakes made with love, for every celebration.</p>
-    <button>Order Now</button>
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-title">Freshly Baked <span class="gradient-text">Happiness!</span></h2>
+        <p class="hero-subtitle">Delicious cakes made with love, for every celebration.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary">Order Now</button>
+        </div>
+      </div>
+    </div>
   </section>
+<!-- Flavors Section -->
+  <section id="flavors" class="flavors-section">
+    <div class="container">
+      <h2 class="section-title">Flavors We Offer</h2>
+      <p class="section-subtitle">Discover our delightful collection of handcrafted cakes</p>
+      
+      <div class="cake-scroll-container">
+        <div class="cake-carousel-wrapper">
+          
+          <div class="cake-item" data-cake-id="1">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Black Forest Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Black Forest</h3>
+            <p class="cake-description">Layers of chocolate, whipped cream, and cherries—classic indulgence with a touch of nostalgia.</p>
+            <div class="cake-price">599</div>
+            <button class="btn-primary add-to-cart" data-cake-id="1">Add to Cart</button>
+          </div>
 
-  <!-- Flavors Section -->
-  <section id="flavors">
-    <h2>Flavors We Offer</h2>
-    <div class="flavor-list">
-      <div class="flavor">
-        <img src="blackforest.jpg" alt="Black Forest Cake">
-        <h3>Black Forest</h3>
-        <p>Layers of chocolate, whipped cream, and cherries—classic indulgence with a touch of nostalgia.</p>
-      </div>
+          <div class="cake-item" data-cake-id="2">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=300&fit=crop" alt="White Forest Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">White Forest</h3>
+            <p class="cake-description">Delicate white chocolate layers with fresh cream and cherries—elegant sweetness.</p>
+            <div class="cake-price">649</div>
+            <button class="btn-primary add-to-cart" data-cake-id="2">Add to Cart</button>
+          </div>
 
-      <div class="flavor">
-        <img src="ganache.jpg" alt="Chocolate Ganache Cake">
-        <h3>Chocolate Ganache</h3>
-        <p>Rich, smooth, and luxuriously chocolatey—pure bliss in every bite.</p>
-      </div>
+          <div class="cake-item" data-cake-id="3">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop" alt="Vanilla Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Vanilla</h3>
+            <p class="cake-description">Classic vanilla sponge with smooth vanilla buttercream—timeless perfection.</p>
+            <div class="cake-price">449</div>
+            <button class="btn-primary add-to-cart" data-cake-id="3">Add to Cart</button>
+          </div>
 
-      <div class="flavor">
-        <img src="redvelvet.jpg" alt="Red Velvet Cake">
-        <h3>Red Velvet</h3>
-        <p>Soft, velvety layers with a hint of cocoa—love at first slice.</p>
+          <div class="cake-item" data-cake-id="4">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&h=300&fit=crop" alt="Pineapple Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Pineapple</h3>
+            <p class="cake-description">Tropical pineapple chunks with light sponge—refreshing tropical delight.</p>
+            <div class="cake-price">499</div>
+            <button class="btn-primary add-to-cart" data-cake-id="4">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="5">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=300&fit=crop" alt="Chocolate Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Chocolate</h3>
+            <p class="cake-description">Rich chocolate sponge with chocolate frosting—pure chocolate heaven.</p>
+            <div class="cake-price">549</div>
+            <button class="btn-primary add-to-cart" data-cake-id="5">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="6">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=300&fit=crop" alt="Chocolate Ganache Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Chocolate Ganache</h3>
+            <p class="cake-description">Rich, smooth, and luxuriously chocolatey—pure bliss in every bite.</p>
+            <div class="cake-price">699</div>
+            <button class="btn-primary add-to-cart" data-cake-id="6">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="7">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=400&h=300&fit=crop" alt="Red Velvet Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Red Velvet</h3>
+            <p class="cake-description">Soft, velvety layers with a hint of cocoa—love at first slice.</p>
+            <div class="cake-price">749</div>
+            <button class="btn-primary add-to-cart" data-cake-id="7">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="8">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1631206853253-65fc5616de8a?w=400&h=300&fit=crop" alt="Rasmalai Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Rasmalai</h3>
+            <p class="cake-description">Traditional rasmalai flavor in cake form—authentic Indian sweetness.</p>
+            <div class="cake-price">799</div>
+            <button class="btn-primary add-to-cart" data-cake-id="8">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="9">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop" alt="Paan Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Paan</h3>
+            <p class="cake-description">Unique paan flavored cake with traditional Indian taste—bold and refreshing.</p>
+            <div class="cake-price">849</div>
+            <button class="btn-primary add-to-cart" data-cake-id="9">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="10">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400&h=300&fit=crop" alt="Doll Cakes" class="cake-img">
+            </div>
+            <h3 class="cake-title">Doll Cakes</h3>
+            <p class="cake-description">Beautiful doll-shaped cakes perfect for birthdays—magical and delicious.</p>
+            <div class="cake-price">1299</div>
+            <button class="btn-primary add-to-cart" data-cake-id="10">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="11">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&h=300&fit=crop" alt="Truffle Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Truffle</h3>
+            <p class="cake-description">Decadent chocolate truffle layers—ultimate chocolate indulgence.</p>
+            <div class="cake-price">899</div>
+            <button class="btn-primary add-to-cart" data-cake-id="11">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="12">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="White Chocolate Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">White Chocolate</h3>
+            <p class="cake-description">Smooth white chocolate layers with creamy texture—elegant sweetness.</p>
+            <div class="cake-price">749</div>
+            <button class="btn-primary add-to-cart" data-cake-id="12">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="13">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?w=400&h=300&fit=crop" alt="Blackcurrant Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Blackcurrant</h3>
+            <p class="cake-description">Tangy blackcurrant flavor with fresh berry taste—fruity perfection.</p>
+            <div class="cake-price">699</div>
+            <button class="btn-primary add-to-cart" data-cake-id="13">Add to Cart</button>
+          </div>
+
+          <div class="cake-item" data-cake-id="14">
+            <div class="cake-image">
+              <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop" alt="Blueberry Cake" class="cake-img">
+            </div>
+            <h3 class="cake-title">Blueberry</h3>
+            <p class="cake-description">Fresh blueberry burst with light sponge—antioxidant-rich delight.</p>
+            <div class="cake-price">749</div>
+            <button class="btn-primary add-to-cart" data-cake-id="14">Add to Cart</button>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
 
+
+  
+  <!-- Footer -->
+        <footer class="footer py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h5 class="footer-title">
+                                <span class="brand-icon">🎂</span>
+                                Divine Cakes
+                            </h5>
+                            <p>Crafting sweet memories with artisan cakes and professional baking classes since 1999.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/pratibha_divinecakes?utm_source=qr&igsh=MTYwNDN6cTF1bjdnOA==" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Quick Links</h6>
+                            <ul class="footer-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="classes.html">Classes</a></li>
+                                <li><a href="orders.html">Orders</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Contact Info</h6>
+                            <ul class="contact-info">
+                                <li>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span> Pearl enclave, Vrindavan Soc, lane no. 2, Yashwantnagar, Kharadi road </span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"></i>
+                                    <span> 8830247948 </span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>divinecake@gmail.com</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Opening Hours</h6>
+                            <ul class="opening-hours">
+                                <li>Monday - Friday: 9:00 AM - 8:00 PM</li>
+                                <li>Saturday: 9:00 AM - 9:00 PM</li>
+                                <li>Sunday: 10:00 AM - 6:00 PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="footer-divider">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="copyright">© 2025 Divine Cakes. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/components.js"></script>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-

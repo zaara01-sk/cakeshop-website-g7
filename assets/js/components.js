@@ -24,7 +24,7 @@ $(document).ready(function() {
             id: 3,
             name: "Wedding Cake (3-tier)",
             price: 4000,
-            image: "cakeimg/wedding-cake.jpg",
+            image: "cakeimg/wedding.jpg",
             description: "Elegant 3-tier vanilla wedding cake with flowers"
         }
     ];

@@ -9,33 +9,30 @@ $(document).ready(function() {
         {
             id: 1,
             name: "Chocolate Dream Cake",
-            price: 45.99,
-            image: "src/assets/chocolate-cake.jpg",
-            description: "Rich chocolate cake with ganache frosting"
+            price:1200 ,
+            image: "cakeimg/choco-dream.jpg",
+            description: "Rich chocolate 1-tier cake with ganache frosting"
         },
         {
             id: 2,
             name: "Vanilla Cupcakes (12 pack)",
-            price: 24.99,
-            image: "src/assets/cupcakes.jpg",
+            price: 600,
+            image: "cakeimg/cupcake.jpg",
             description: "Classic vanilla cupcakes with buttercream"
         },
         {
             id: 3,
             name: "Wedding Cake (3-tier)",
-            price: 299.99,
-            image: "src/assets/wedding-cake.jpg",
-            description: "Elegant 3-tier wedding cake with flowers"
-        },
-        {
-            id: 4,
-            name: "Birthday Special",
-            price: 35.99,
-            image: "src/assets/hero-cakes.jpg",
-            description: "Customizable birthday cake with decorations"
+            price: 4000,
+            image: "cakeimg/wedding-cake.jpg",
+            description: "Elegant 3-tier vanilla wedding cake with flowers"
         }
     ];
-    
+     // Function to format price in rupees
+    function formatPriceINR(price) {
+        return '₹' + price.toLocaleString('en-IN');
+    }
+
     // Load cakes on orders page
     function loadCakes() {
         if ($('#cakeGrid').length > 0) {
@@ -51,7 +48,7 @@ $(document).ready(function() {
                             <h5>${cake.name}</h5>
                             <p class="text-muted">${cake.description}</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="cake-price">$${cake.price}</span>
+                                <span class="cake-price">${formatPriceINR(cake.price)}</span>
                                 <button class="btn btn-primary btn-sm add-to-cart" data-cake-id="${cake.id}">
                                     <i class="fas fa-plus"></i> Add to Cart
                                 </button>
@@ -112,7 +109,7 @@ $(document).ready(function() {
                         <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                         <div class="cart-item-info">
                             <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-price">$${itemTotal.toFixed(2)}</div>
+                            <div class="cart-item-price">${formatPriceINR(itemTotal)}</div>
                             <div class="quantity-controls">
                                 <button class="quantity-btn decrease-qty" data-cake-id="${item.id}">-</button>
                                 <span class="mx-2">${item.quantity}</span>
@@ -131,10 +128,10 @@ $(document).ready(function() {
             const tax = subtotal * 0.085;
             const total = subtotal + tax;
             
-            $('#subtotal').text('$' + subtotal.toFixed(2));
-            $('#tax').text('$' + tax.toFixed(2));
-            $('#finalTotal').text('$' + total.toFixed(2));
-            $('#modalTotal').text('$' + total.toFixed(2));
+            $('#subtotal').text(formatPriceINR(subtotal));
+            $('#tax').text(formatPriceINR(tax));
+            $('#finalTotal').text(formatPriceINR(total));
+            $('#modalTotal').text(formatPriceINR(total));
             
             cartTotal.show();
         }

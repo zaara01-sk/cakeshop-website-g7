@@ -2,30 +2,36 @@
 $(document).ready(function() {
     
     // Loading Screen Animation - jQuery Function 1
-    function initLoadingScreen() {
-        let progress = 0;
-        const progressBar = $('#loadingProgress');
-        const progressPercent = $('#progressPercent');
+function initLoadingScreen() {
+    let progress = 0;
+    const progressBar = $('#loadingProgress');
+    const progressPercent = $('#progressPercent');
+    const startTime = performance.now();
+    const duration = 2000; // 2 seconds total loading time
+    
+    function updateProgress() {
+        const elapsed = performance.now() - startTime;
+        progress = Math.min((elapsed / duration) * 100, 100);
         
-        const loadingInterval = setInterval(function() {
-            progress += Math.random() * 3 + 1;
-            if (progress > 100) progress = 100;
-            
-            progressBar.css('width', progress + '%');
-            progressPercent.text(Math.floor(progress));
-            
-            if (progress >= 100) {
-                clearInterval(loadingInterval);
-                setTimeout(function() {
-                    $('#loadingScreen').fadeOut(1000, function() {
-                        $('#mainContent').fadeIn(500);
-                        // Initialize scroll animations after loading
-                        initScrollAnimations();
-                    });
-                }, 500);
-            }
-        }, 80);
+        progressBar.css('width', progress + '%');
+        progressPercent.text(Math.floor(progress));
+        
+        if (progress < 100) {
+            requestAnimationFrame(updateProgress);
+        } else {
+            // Loading complete
+            setTimeout(function() {
+                $('#loadingScreen').fadeOut(800, function() {
+                    $('#mainContent').fadeIn(200);
+                    // Initialize scroll animations after loading
+                    initScrollAnimations();
+                });
+            }, 300);
+        }
     }
+    
+    requestAnimationFrame(updateProgress);
+}
     
     // Smooth Scroll Navigation - jQuery Function 2
     function initSmoothScroll() {

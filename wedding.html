@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Cakes - Aditya Creations</title>
+    <meta name="description" content="Order custom cakes, cupcakes, and pastries from Aditya Creations. Browse our menu and place orders for pickup or delivery.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-icon">🎂</span>
+                <span class="brand-text">Divine Cakes</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tutorials.html">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="booking.html">Orders</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Orders Hero -->
+    <section class="orders-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="hero-title">Wedding Cakes</h1>
+                    <p class="hero-subtitle">💍 “Crowning Your Love with our delicious Cakes.”</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders Content -->
+    <section class="orders-content py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Cake Menu -->
+                    <div class="cake-menu mb-5">
+                        <h3 class="section-title mb-4">Dream Layers Menu</h3>
+                        <div class="row" id="cakeGrid">
+                            <!-- Cakes will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- Shopping Cart -->
+                    <div class="cart-section glass-card sticky-top">
+                        <h4 class="cart-title">
+                            <i class="fas fa-shopping-cart"></i>
+                            Your Order
+                            <span class="badge bg-primary ms-2" id="cartCount">0</span>
+                        </h4>
+                        <div id="cartItems">
+                            <div class="empty-cart text-center py-4">
+                                <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+                                <p class="text-muted">Your cart is empty</p>
+                                <p class="small">💍 Choose your dream cake to begin the magic! </p>
+                            </div>
+                        </div>
+                        <div class="cart-total" id="cartTotal" style="display: none;">
+                            <div class="total-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">Rs 0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Tax (8.5%):</span>
+                                <span id="tax">Rs 0.00</span>
+                            </div>
+                            <div class="total-row total-final">
+                                <strong>
+                                    <span>Total:</span>
+                                    <span id="finalTotal">Rs 0.00</span>
+                                </strong>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3" id="checkoutBtn">Proceed to Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="checkoutForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 class="mb-3">Customer Information</h6>
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="customerName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="customerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="customerPhone" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="mb-3">Order Details</h6>
+                                <div class="mb-3">
+                                    <label class="form-label">Order Type *</label>
+                                    <select class="form-select" id="orderType" required>
+                                        <option value="">Select order type</option>
+                                        <option value="pickup">Pickup</option>
+                                        <option value="delivery">Delivery</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Preferred Date *</label>
+                                    <input type="date" class="form-control" id="preferredDate" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Special Instructions</label>
+                                    <textarea class="form-control" id="specialInstructions" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-address" id="deliveryAddress" style="display: none;">
+                            <h6 class="mb-3">Delivery Address</h6>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Street Address *</label>
+                                    <input type="text" class="form-control" id="streetAddress">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">City *</label>
+                                    <input type="text" class="form-control" id="city">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label class="form-label">State *</label>
+                                    <input type="text" class="form-control" id="state">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label class="form-label">ZIP Code *</label>
+                                    <input type="text" class="form-control" id="zipCode">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="me-auto">
+                        <strong>Total: <span id="modalTotal">Rs 0.00</span></strong>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitOrder">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5 class="footer-title">
+                            <span class="brand-icon">🎂</span>
+                            Aditya Creations
+                        </h5>
+                        <p>Crafting sweet memories with artisan cakes and professional baking classes since 2015.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/pratibha_divinecakes?utm_source=qr&igsh=MTYwNDN6cTF1bjdnOA==" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h6 class="footer-title">Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="tutorials.html">Classes</a></li>
+                            <li><a href="booking.html">Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Contact Info</h5>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Pearl Enclave, lane no.2, Vrindavan society, Kharadi-14</li>
+                        <li><i class="fas fa-phone"></i> +91 8830247948</li>
+                        <li><i class="fas fa-envelope"></i> divinecakes@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Opening Hours</h5>
+                    <ul class="opening-hours">
+                        <li>Monday - Saturday: 9:00 AM - 8:00 PM</li>
+                        <li>Sunday: 10:00 AM - 6:00 PM</li>
+                        <li>Classes: 10:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="copyright">© 2025 Divine Cakes | All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/components.js"></script>
+</body>
+</html>

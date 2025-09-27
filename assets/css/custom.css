@@ -276,6 +276,13 @@ body {
     color: var(--dark);
     text-align: center;
     margin-bottom: 1rem;
+    margin-top: 0;
+    padding-top: 1rem;
+}
+/* Flavors Section Specific */
+#flavors .section-title {
+    margin-top: 2rem;
+    padding-top: 2rem;
 }
 
 .section-subtitle {
@@ -610,6 +617,15 @@ body {
 }
 
 /* Orders Page */
+.orders-content {
+    padding-top: 120px; /* Account for fixed navbar */
+    min-height: 100vh;
+}
+
+.orders-content .container {
+    padding-top: 2rem;
+}
+
 .cake-menu-item {
     margin-bottom: 2rem;
 }

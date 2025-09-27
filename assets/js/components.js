@@ -4,12 +4,12 @@ $(document).ready(function() {
     // Shopping Cart functionality
     let cart = [];
     
-    // Cake data
-    const cakes = [
+    // Wedding Cake data (for wedding.html)
+    const weddingCakes = [
         {
             id: 1,
             name: "Chocolate Dream Cake",
-            price:1200 ,
+            price: 1200,
             image: "cakeimg/choco-dream.jpg",
             description: "Rich chocolate 1-tier cake with ganache frosting"
         },
@@ -28,6 +28,122 @@ $(document).ready(function() {
             description: "Elegant 3-tier vanilla wedding cake with flowers"
         }
     ];
+    
+    // Regular Cake data (for booking.html)
+    const regularCakes = [
+        {
+            id: 1,
+            name: "Black Forest",
+            price: 599,
+            image: "cakeimg/black_forest.jpg",
+            description: "Layers of chocolate, whipped cream, and cherries—classic indulgence with a touch of nostalgia."
+        },
+        {
+            id: 2,
+            name: "White Forest",
+            price: 649,
+            image: "cakeimg/wforest.jpg",
+            description: "Delicate white chocolate layers with fresh cream and cherries—elegant sweetness."
+        },
+        {
+            id: 3,
+            name: "Vanilla",
+            price: 449,
+            image: "cakeimg/vanillack.jpg",
+            description: "Classic vanilla sponge with smooth vanilla buttercream—timeless perfection."
+        },
+        {
+            id: 4,
+            name: "Pineapple",
+            price: 499,
+            image: "cakeimg/pineapple.jpg",
+            description: "Tropical pineapple chunks with light sponge—refreshing tropical delight."
+        },
+        {
+            id: 5,
+            name: "Chocolate",
+            price: 549,
+            image: "cakeimg/chocolate.jpg",
+            description: "Rich chocolate sponge with chocolate frosting—pure chocolate heaven."
+        },
+        {
+            id: 6,
+            name: "Chocolate Ganache",
+            price: 699,
+            image: "cakeimg/chocolate_ganache.jpg",
+            description: "Rich, smooth, and luxuriously chocolatey—pure bliss in every bite."
+        },
+        {
+            id: 7,
+            name: "Red Velvet",
+            price: 749,
+            image: "cakeimg/Red_velvet.jpg",
+            description: "Soft, velvety layers with a hint of cocoa—love at first slice."
+        },
+        {
+            id: 8,
+            name: "Rasmalai",
+            price: 799,
+            image: "cakeimg/rasmalai.jpg",
+            description: "Traditional rasmalai flavor in cake form—authentic Indian sweetness."
+        },
+        {
+            id: 9,
+            name: "Paan",
+            price: 849,
+            image: "cakeimg/paan.jpg",
+            description: "Unique paan flavored cake with traditional Indian taste—bold and refreshing."
+        },
+        {
+            id: 10,
+            name: "Doll Cakes",
+            price: 1299,
+            image: "cakeimg/doll_cake.jpg",
+            description: "Beautiful doll-shaped cakes perfect for birthdays—magical and delicious."
+        },
+        {
+            id: 11,
+            name: "Truffle",
+            price: 899,
+            image: "cakeimg/truffle.jpg",
+            description: "Decadent chocolate truffle layers—ultimate chocolate indulgence."
+        },
+        {
+            id: 12,
+            name: "White Chocolate",
+            price: 749,
+            image: "cakeimg/white-chocolate.jpg",
+            description: "Smooth white chocolate layers with creamy texture—elegant sweetness."
+        },
+        {
+            id: 13,
+            name: "Blackcurrant",
+            price: 699,
+            image: "cakeimg/blackcurrant.jpg",
+            description: "Tangy blackcurrant flavor with fresh berry taste—fruity perfection."
+        },
+        {
+            id: 14,
+            name: "Blueberry",
+            price: 749,
+            image: "cakeimg/blueberry.jpg",
+            description: "Fresh blueberry burst with light sponge—antioxidant-rich delight."
+        }
+    ];
+    
+    // Determine which cakes to use based on current page
+    let cakes = [];
+    const currentPage = window.location.pathname;
+    
+    if (currentPage.includes('wedding.html')) {
+        cakes = weddingCakes;
+    } else if (currentPage.includes('booking.html')) {
+        cakes = regularCakes;
+    } else {
+        // Default to regular cakes
+        cakes = regularCakes;
+    }
+
      // Function to format price in rupees
     function formatPriceINR(price) {
         return '₹' + price.toLocaleString('en-IN');

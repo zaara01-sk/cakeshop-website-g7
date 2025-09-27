@@ -132,18 +132,20 @@ $(document).ready(function() {
     ];
     
     // Determine which cakes to use based on current page
-    let cakes = [];
-    const currentPage = window.location.pathname;
-    
-    if (currentPage.includes('wedding.html')) {
-        cakes = weddingCakes;
-    } else if (currentPage.includes('booking.html')) {
-        cakes = regularCakes;
-    } else {
-        // Default to regular cakes
-        cakes = regularCakes;
-    }
+let cakes = [];
+const currentPage = window.location.pathname;
+const pageTitle = document.title;
 
+// More reliable detection using multiple methods
+if (currentPage.includes('wedding.html') || 
+    document.querySelector('h1')?.textContent?.includes('Wedding Cakes') ||
+    document.querySelector('.hero-subtitle')?.textContent?.includes('Crowning Your Love')) {
+    cakes = weddingCakes;
+    console.log('Loading wedding cakes');
+} else {
+    cakes = regularCakes;
+    console.log('Loading regular cakes');
+}
      // Function to format price in rupees
     function formatPriceINR(price) {
         return '₹' + price.toLocaleString('en-IN');
